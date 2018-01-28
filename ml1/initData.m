@@ -1,0 +1,11 @@
+m=500;
+close all;
+x=[rand(m,1)*100];
+X=[x,x.^2];
+theta=[10;-30;15];
+r=(rand(m,1)-0.5)*5;
+% r=zeros(m,1);
+y=[ones(m,1) X]*theta.+r;
+dat=[X,y];
+plot(x,y,'+');
+save 'dat.dat' dat;
